@@ -1,0 +1,2 @@
+# SmartQ
+Smart queue application
