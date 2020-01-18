@@ -1,14 +1,14 @@
 const express = require('express');
-const config = require('config');
 const mongoose = require('mongoose');
 
 const app = express();
 
-const PORT = config.get('port') || 5000;
+const PORT = process.env.DB_PORT;
+const URI = process.env.DB_URI;
 
 async function start() {
   try {
-    await mongoose.connect(config.get('mongoUri'), {
+    await mongoose.connect(URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true
