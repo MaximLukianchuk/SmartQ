@@ -4,8 +4,8 @@
   "description": "Smart queue application",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js"
+    "start": "node -r dotenv/config app.js",
+    "server": "nodemon -r dotenv/config app.js"
   },
   "keywords": [
     "react",
@@ -20,7 +20,6 @@
   "author": "Mark Smirnov, Lukianchuk Maxim",
   "license": "ISC",
   "dependencies": {
-    "config": "^3.2.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.8.7"
