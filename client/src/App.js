@@ -1,16 +1,22 @@
 import React from 'react';
-import { useLocalStorage } from './hooks/useLocalStorage'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import { MainPage } from './pages/MainPage'
+import { QueuePage } from './pages/QueuePage'
 
 function App() {
 
-  const [uuid, setUuid] = useLocalStorage('uuid')
-
   return (
-    <div>
-      <h1>Hello</h1>
-      <h2>Your secret UUID is {uuid}</h2>
-      <input type='text' onChange={({target: {value}}) => setUuid(value)}/>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/' exact>
+          <MainPage />
+        </Route>
+        <Route path='/:id' >
+          <QueuePage />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
