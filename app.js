@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-const PORT = process.env.DB_PORT;
+const PORT = process.env.PORT;
 const URI = process.env.DB_URI;
 
 async function start() {
