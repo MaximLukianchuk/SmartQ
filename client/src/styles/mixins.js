@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from "styled-components"
 
 /**
  * Выставляет ширину в 100% для телефона и в 8.33% * n для десктопа
@@ -8,7 +8,7 @@ import { css } from 'styled-components'
 export const col = n => css`
   width: 100%;
   ${p => p.theme.mq.desktop} {
-    width: ${p => p.theme.colSize[n] || '100%'}
+    width: ${p => p.theme.colSize[n] || "100%"};
   }
 `
 
@@ -17,9 +17,9 @@ export const col = n => css`
  * @param n
  * @returns { css }
  */
-export const col_s = n => css`
+export const colS = n => css`
   width: 100%;
   ${p => p.theme.mq.tablet} {
-    width: ${p => p.theme.colSize[n] || '100%'}
+    width: ${p => p.theme.colSize[n] || "100%"};
   }
 `

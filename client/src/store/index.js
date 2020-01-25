@@ -1,10 +1,10 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers } from "redux"
 
-import { membersReducer } from './reducers'
-import { getMiddleware } from './middleware'
+import { membersReducer } from "./reducers/members"
+import { getMiddleware } from "./middleware"
 
 const rootReducer = combineReducers({
-  members: membersReducer,
+  members: membersReducer
 })
 
 export const getStore = () => createStore(rootReducer, getMiddleware())
