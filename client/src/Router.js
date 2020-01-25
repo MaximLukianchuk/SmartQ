@@ -1,16 +1,16 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import React from "react"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 
-import { MainPage } from './pages/MainPage'
-import { QueuePage } from './pages/QueuePage'
+import { MainPage } from "./pages/MainPage"
+import { QueuePage } from "./pages/QueuePage"
 
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route path='/' exact>
+      <Route path="/" exact>
         <MainPage />
       </Route>
-      <Route path='/:id' >
+      <Route path="/:id">
         <QueuePage />
       </Route>
     </Switch>

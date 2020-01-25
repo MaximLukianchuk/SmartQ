@@ -1,16 +1,11 @@
-import produce from 'immer'
+/* eslint-disable no-param-reassign */
+import produce from "immer"
 
-import { MembersActionTypes } from '../actions/members'
-
-export const LoadingState = {
-  NotLoaded: 0,
-  Loading: 1,
-  Loaded: 2,
-}
+import { MembersActionTypes, LoadingState } from "../actions/members"
 
 const initialState = {
   members: [],
-  loadingState: LoadingState.NotLoaded,
+  loadingState: LoadingState.NotLoaded
 }
 
 export const membersReducer = produce((draft, action) => {
