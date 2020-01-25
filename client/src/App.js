@@ -1,23 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import React from 'react'
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 
-import { MainPage } from './pages/MainPage'
-import { QueuePage } from './pages/QueuePage'
+import Router from './Router'
+import { theme } from './styles/theme'
+import { getStore } from './store'
 
-function App() {
+const store = getStore()
 
-  return (
-    <Router>
-      <Switch>
-        <Route path='/' exact>
-          <MainPage />
-        </Route>
-        <Route path='/:id' >
-          <QueuePage />
-        </Route>
-      </Switch>
-    </Router>
-  )
-}
+const App = () => (
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <Router />
+    </ThemeProvider>
+  </Provider>
+)
 
-export default App;
+export default App
