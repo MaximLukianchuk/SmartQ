@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import io from "socket.io-client"
 
 import { loadMembers } from '../store/actions/members'
@@ -16,7 +16,7 @@ export const MainPage = () => {
   return (
     <div>
       <h1>Главная страница SmartQ</h1>
-      <button style={{padding: '6px', background: 'pink'}}>Сосздать очередь!</button>
+      <button>Сосздать очередь!</button>
     </div>
   )
 }
