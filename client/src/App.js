@@ -6,6 +6,8 @@ import Router from './Router'
 import { theme } from './styles/theme'
 import { getStore } from './store'
 
+import './styles/reset.css'
+
 const store = getStore()
 
 const App = () => (
