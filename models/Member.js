@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+
+const { Schema } = mongoose
 
 const schema = new Schema({
   _id: Number,
@@ -9,8 +10,8 @@ const schema = new Schema({
   },
   name: {
     type: String,
-    required: true,
+    required: true
   }
-});
+})
 
-module.exports = mongoose.model('Member', schema);
+module.exports = mongoose.model("Member", schema)
