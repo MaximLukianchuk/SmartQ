@@ -1,9 +1,9 @@
+import memberModel from "./models/Member"
+
 const express = require("express")
 const mongoose = require("mongoose")
 const http = require("http")
 const socketServer = require("socket.io")
-
-const memberModel = require("./models/Member")
 
 const app = express()
 const server = http.createServer(app)

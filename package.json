@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node -r dotenv/config app.js",
-    "server": "nodemon -r dotenv/config app.js",
+    "server": "nodemon --exec babel-node -r dotenv/config app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "lint": "concurrently \"eslint .\" \"npm run lint --prefix client\"",
