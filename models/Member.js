@@ -3,7 +3,6 @@ const mongoose = require("mongoose")
 const { Schema } = mongoose
 
 const schema = new Schema({
-  _id: Number,
   uuid: {
     type: String,
     unique: true
