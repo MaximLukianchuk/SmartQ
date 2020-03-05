@@ -2,7 +2,7 @@
 
 SmartQ - open source проект для организации очередей
 
-![Очередь](http://cppstudio.com/wp-content/images/article/queue.jpg)
+![Очередь](https://www.incimages.com/uploaded_files/image/1940x900/getty_177129252_49311.jpg)
 
 ### Соглашения
 + ветки именуются в формате login.feauture/TASK-ID, login.TASK-ID, login.feature

@@ -1,9 +1,9 @@
-import memberModel from "./models/Member"
+import express from "express"
+import mongoose from "mongoose"
+import http from "http"
+import socketServer from "socket.io"
 
-const express = require("express")
-const mongoose = require("mongoose")
-const http = require("http")
-const socketServer = require("socket.io")
+import queueModel from "./models/Queue"
 
 const app = express()
 const server = http.createServer(app)
@@ -35,11 +35,13 @@ io.on("connection", socket => {
     console.log(`Disconnected - ${socket.id}`)
   })
 
-  memberModel.find({}, (error, result) => {
-    if (error) {
-      console.log(error)
-    } else {
-      socket.emit("membersLoaded", result)
-    }
+  socket.on("loadQueue", uuid => {
+    queueModel.find({ uuid }, (error, result) => {
+      if (error) {
+        console.log(error)
+      } else {
+        socket.emit("queueLoaded", result)
+      }
+    })
   })
 })
