@@ -6,7 +6,7 @@ logs/
 
 node_modules
 
-.idea/
+../.idea/
 .vscode/
 
 .env
