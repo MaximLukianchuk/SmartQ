@@ -1,0 +1,26 @@
+{
+  "name": "smartq",
+  "version": "1.0.0",
+  "description": "Smart queue application",
+  "scripts": {
+    "dev": "concurrently \"npm start --prefix server\" \"npm start --prefix client\"",
+    "lint": "concurrently \"npm run lint --prefix server\" \"npm run lint --prefix client\"",
+    "lint:fix": "concurrently \"npm run lint:fix --prefix server\" \"npm run lint:fix --prefix client\""
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "full",
+    "stack",
+    "node",
+    "js",
+    "express",
+    "mongo"
+  ],
+  "author": "Mark Smirnov, Lukianchuk Maxim",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "husky": "^4.2.3"
+  }
+}

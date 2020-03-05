@@ -17,8 +17,9 @@ SmartQ - open source проект для организации очередей
 ```
 git clone https://github.com/MarkSmirnov13/SmartQ.git
 cd SmartQ
+cd server
 npm ci
-cd client
+cd ../client
 npm ci
 cd ../
 npm run dev
