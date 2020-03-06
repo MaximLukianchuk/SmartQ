@@ -4,9 +4,11 @@ import produce from "immer"
 import { QueueActionTypes, LoadingState } from "../actions/queue"
 
 const initialState = {
-  uuid: null,
-  name: null,
-  members: [],
+  queue: {
+    uuid: null,
+    name: null,
+    members: []
+  },
   loadingState: LoadingState.NotLoaded
 }
 

@@ -11,11 +11,14 @@ const schema = new Schema({
     type: String,
     required: true
   },
+  ownerUuid: {
+    type: String,
+    required: true
+  },
   members: [
     {
       uuid: {
-        type: String,
-        unique: true
+        type: String
       }
     }
   ]

@@ -2,12 +2,24 @@ import express from "express"
 import mongoose from "mongoose"
 import http from "http"
 import socketServer from "socket.io"
+import bodyParser from "body-parser"
 
-import queueModel from "./models/Queue"
+import queueModel from "./database/models/Queue"
+import { createRouter } from "./router"
 
 const app = express()
 const server = http.createServer(app)
 const io = socketServer(server)
+
+// app.use(
+//   "/",
+//   createProxyMiddleware({
+//     target: "http://localhost:3000",
+//     changeOrigin: true
+//   })
+// )
+app.use(bodyParser.json())
+app.use(createRouter())
 
 const { PORT } = process.env
 const { DB_URI } = process.env
