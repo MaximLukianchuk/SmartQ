@@ -30,3 +30,8 @@ export const loadQueue = socket => dispatch => {
     dispatch(setLoadingQueueState(LoadingState.Loaded))
   })
 }
+
+export const enterQueue = socket => dispatch => {
+  socket.on("")
+  dispatch()
+}
