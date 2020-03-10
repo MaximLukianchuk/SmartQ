@@ -11,13 +11,6 @@ const app = express()
 const server = http.createServer(app)
 const io = socketServer(server)
 
-// app.use(
-//   "/",
-//   createProxyMiddleware({
-//     target: "http://localhost:3000",
-//     changeOrigin: true
-//   })
-// )
 app.use(bodyParser.json())
 app.use(createRouter())
 
