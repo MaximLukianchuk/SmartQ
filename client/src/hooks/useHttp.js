@@ -1,11 +1,11 @@
 import { useState, useCallback } from "react"
 
 export const useHttp = () => {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [httpLoading, setHttpLoading] = useState(false)
+  const [httpError, setHttpError] = useState(null)
 
-  const request = useCallback(async (url, method = "GET", body = null, headers = {}) => {
-    setLoading(true)
+  const httpRequest = useCallback(async (url, method = "GET", body = null, headers = {}) => {
+    setHttpLoading(true)
     try {
       const parsedBody = body && JSON.stringify(body)
       const parsedHeaders = body ? { ...headers, "Content-Type": "application/json" } : headers
@@ -16,17 +16,17 @@ export const useHttp = () => {
         throw new Error(data.message || "Http request error")
       }
 
-      setLoading(false)
+      setHttpLoading(false)
 
       return data
     } catch (err) {
-      setLoading(false)
-      setError(err.message)
+      setHttpLoading(false)
+      setHttpError(err.message)
       throw err
     }
   }, [])
 
-  const clearError = () => setError(null)
+  const clearHttpError = () => setHttpError(null)
 
-  return { loading, request, error, clearError }
+  return { httpLoading, httpRequest, httpError, clearHttpError }
 }
